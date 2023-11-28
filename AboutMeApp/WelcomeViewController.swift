@@ -7,23 +7,35 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+final class WelcomeViewController: UIViewController {
 
+    @IBOutlet var welcomeLabel: UILabel!
+    
+    var welcomeMessage: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        welcomeLabel.text = welcomeMessage
+        
+        let gradientLayer = CAGradientLayer()
+        let topColor = UIColor(
+            red: 222 / 255,
+            green: 144 / 255,
+            blue: 200 / 255,
+            alpha: 1
+        )
+        let bottomColor = UIColor(
+            red: 103 / 255,
+            green: 132 / 255,
+            blue: 211 / 255,
+            alpha: 1
+        )
+        
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [topColor.cgColor, bottomColor.cgColor]
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
 
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
