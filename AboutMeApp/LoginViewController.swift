@@ -9,6 +9,7 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     
+    // MARK: IB Outlets
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
@@ -16,6 +17,11 @@ final class LoginViewController: UIViewController {
     @IBOutlet var forgotUserNameButton: UIButton!
     @IBOutlet var forgotPasswordButton: UIButton!
     
+    // MARK: Private Properties
+    private let userName = "1"
+    private let password = "2"
+    
+    // MARK: Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,20 +29,28 @@ final class LoginViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
+        if !userNameTextField.isEditing || !passwordTextField.isEditing {
+            self.view.endEditing(true)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let welcomeVC = segue.destination as? WelcomeViewController
-        welcomeVC?.welcomeMessage = "Welcome, \(userNameTextField.text ?? "User")!"
+        welcomeVC?.welcomeMessage = "Welcome, \(userNameTextField.text ?? "")!"
     }
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard userNameTextField.text == "1", passwordTextField.text == "2" else {
+    override func shouldPerformSegue(
+        withIdentifier identifier: String,
+        sender: Any?
+    ) -> Bool {
+        guard userNameTextField.text == userName,
+              passwordTextField.text == password else {
             return false
         }
         return true
     }
     
+    // MARK: IB Actions
     @IBAction func logInButtonTapped() {
         guard let inputLogin = userNameTextField.text, !inputLogin.isEmpty else {
             return
