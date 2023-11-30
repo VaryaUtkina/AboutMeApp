@@ -34,7 +34,6 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Log in"/>
                                         <connections>
-                                            <action selector="logInButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="onj-Dc-k97"/>
                                             <segue destination="9Me-VE-2A6" kind="presentation" identifier="GoToWelcomeScreen" modalPresentationStyle="fullScreen" id="6pf-yj-vt3"/>
                                         </connections>
                                     </button>
@@ -48,17 +47,17 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Forgot User Name?"/>
                                                 <connections>
-                                                    <action selector="forgotUserNameButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wfg-Sj-luj"/>
+                                                    <action selector="forgotRegisterData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aRw-aU-ffa"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orG-LC-pXY">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orG-LC-pXY">
                                                 <rect key="frame" x="148" y="0.0" width="98" height="22"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                 <inset key="contentEdgeInsets" minX="2" minY="4" maxX="2" maxY="4"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Forgot Password?"/>
                                                 <connections>
-                                                    <action selector="forgotPasswordButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="haA-zU-NrO"/>
+                                                    <action selector="forgotRegisterData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IsM-0Q-RRs"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -74,9 +73,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="forgotPasswordButton" destination="orG-LC-pXY" id="h3c-b7-fVm"/>
-                        <outlet property="forgotUserNameButton" destination="SEI-Rg-U1p" id="eqB-rZ-gcX"/>
-                        <outlet property="logInButton" destination="MGP-qj-JYV" id="2G6-ml-qI0"/>
                         <outlet property="passwordTextField" destination="ohP-sV-cA9" id="jNn-mS-Rgt"/>
                         <outlet property="userNameTextField" destination="uoG-nk-pd4" id="wUw-1D-P79"/>
                     </connections>
